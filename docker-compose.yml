@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  server:
+    build: ./spa-orders-and-products-server
+    image: server-app
+    ports:
+      - "3001:3001"  # Expose server port 3001
+    environment:
+      - NODE_ENV=production
+      - PORT=3001  # Ensure server listens on 3001
+
+  client:
+    build: ./spa-orders-and-products
+    image: client-app
+    ports:
+      - "3000:3000"  # Client on 3000 (Nginx)
+    depends_on:
+      - server
+    environment:
+      - REACT_APP_API_URL=http://localhost:3001  # Change that

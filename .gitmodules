@@ -1,0 +1,6 @@
+[submodule "spa-orders-and-products"]
+    path = spa-orders-and-products
+    url = https://github.com/andrenaP/spa-orders-and-products.git
+[submodule "spa-orders-and-products-server"]
+    path = spa-orders-and-products-server
+    url = https://github.com/andrenaP/spa-orders-and-products-server.git
